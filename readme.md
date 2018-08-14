@@ -5,11 +5,13 @@ A simplified benchmark for video encoding performance, specifically designed for
 ## usage
 
 The easiest way to run the benchmark is to just run the bare image:
+
 ```
 docker run --rm -it shamelesscookie/x264-benchmark:latest
 ```
 
-By default, `THREADS` will be set to half the number of CPU cores available to docker. This is designed to approximate how much processing power you'd be able to give to x264 if you were performing encoding on the same machine as the game or application you are streaming.
+
+By default, the ffmpeg `-threads` parameter will be set to half the number of logical CPU cores available to docker. This is designed to approximate how much processing power you'd be able to give to x264 if you were performing encoding on the same machine as the game or application you are streaming.
 
 You can override this by setting the `THREADS` environment variable, e.g. to `0` to use all cores, but keep in mind that if you are using the encoding PC for other tasks (especially playing games), you should not expect to use all cores for encoding.
 
@@ -17,11 +19,14 @@ You can override this by setting the `THREADS` environment variable, e.g. to `0`
 docker run --rm -it -e THREADS=0 shamelesscookie/x264-benchmark:latest
 ```
 
+
 ## interpreting output
 
 The benchmark encodes a 10-second action clip from Heroes of the Storm at 6000K ([Twitch's maximum recommended bitrate](https://stream.twitch.tv/encoding/)) and at various resolutions, framerates, and presets. It then outputs the encoding speed as a multiple of framerate. This is meant to indicate how likely your system will be able to encode at those settings.
 
 Combinations that result in 1.5x or greater should be safe to stream at, but use your judgement. Certainly 1.0x or below will be too difficult.
+
+Here's some sample results from an i7 8700k with the default configuration (threads = 1/2 logical cores):
 
 ```
 resolution:  1920x1080 @ 60 fps
