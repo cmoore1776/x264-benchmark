@@ -9,7 +9,7 @@ do
   for framerate in 30 60
   do
     printf "\n%10s: %10s @ %2s fps\n" "resolution" ${resolution} ${framerate}
-    for preset in ultrafast superfast veryfast faster fast medium slow
+    for preset in ultrafast superfast veryfast faster fast
     do
       printf "%10s: " ${preset}
       FRAMERATE_2X=$(($framerate * 2))

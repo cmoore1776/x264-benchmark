@@ -1,4 +1,4 @@
-FROM jrottenberg/ffmpeg:3.4-alpine
+FROM jrottenberg/ffmpeg:4.1-alpine
 
 RUN mkdir /input && mkdir /output
 COPY skydiver_10sec.mp4 /input

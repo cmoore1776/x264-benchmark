@@ -22,7 +22,7 @@ docker run --rm -it -e THREADS=0 shamelesscookie/x264-benchmark:latest
 
 ## interpreting output
 
-The benchmark encodes a 10-second action clip from Heroes of the Storm at 6000K ([Twitch's maximum recommended bitrate](https://stream.twitch.tv/encoding/)) and at various resolutions, framerates, and presets. It then outputs the encoding speed as a multiple of framerate. This is meant to indicate how likely your system will be able to encode at those settings.
+The benchmark encodes a 10-second action clip from 3DMark Skydiver at 6000K ([Twitch's maximum recommended bitrate](https://stream.twitch.tv/encoding/)) and at various resolutions, framerates, and presets. It then outputs the encoding speed as a multiple of framerate. This is meant to indicate how likely your system will be able to encode at those settings.
 
 Combinations that can run in < 10s should be safe to stream at.
 
